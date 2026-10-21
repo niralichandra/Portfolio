@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" font-family="ui-monospace, Menlo, Consolas, monospace">
+  <defs>
+    <radialGradient id="warm" cx="80%" cy="10%" r="65%"><stop offset="0" stop-color="#e8533a" stop-opacity=".42"/><stop offset="1" stop-color="#e8533a" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cool" cx="5%" cy="100%" r="55%"><stop offset="0" stop-color="#00d4ff" stop-opacity=".2"/><stop offset="1" stop-color="#00d4ff" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".045"/></pattern>
+    <linearGradient id="link" x1="0" x2="1"><stop offset="0" stop-color="#e8533a"/><stop offset="1" stop-color="#00d4ff"/></linearGradient>
+    <linearGradient id="blk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d1d1d"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient>
+    <linearGradient id="coin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff7a5c"/><stop offset="1" stop-color="#b8341f"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <rect width="1200" height="460" fill="#070707"/>
+  <rect width="1200" height="460" fill="url(#warm)"/>
+  <rect width="1200" height="460" fill="url(#cool)"/>
+  <rect width="1200" height="460" fill="url(#grid)"/>
+
+  <!-- faint peer network -->
+  <g stroke="#fff" stroke-opacity=".08" fill="none">
+    <path d="M60 60L180 120L120 230L40 300M180 120L300 60M640 40L760 70M980 380L1100 330L1160 400M860 420L980 380M420 420L540 390"/>
+  </g>
+  <g fill="#fff" fill-opacity=".25">
+    <circle cx="60" cy="60" r="3"/><circle cx="180" cy="120" r="3"/><circle cx="120" cy="230" r="3"/><circle cx="40" cy="300" r="2.5"/><circle cx="300" cy="60" r="2.5"/>
+    <circle cx="640" cy="40" r="2.5"/><circle cx="760" cy="70" r="3"/><circle cx="980" cy="380" r="3"/><circle cx="1100" cy="330" r="3"/><circle cx="1160" cy="400" r="2.5"/><circle cx="860" cy="420" r="2.5"/><circle cx="540" cy="390" r="2.5"/><circle cx="420" cy="420" r="2.5"/>
+  </g>
+
+  <!-- chain links -->
+  <g fill="none" stroke="url(#link)" stroke-width="3" filter="url(#glow)">
+    <path d="M440 180C470 180 470 280 500 280"/>
+    <path d="M690 280C720 280 720 170 750 170"/>
+    <path d="M940 170C970 170 970 270 1000 270"/>
+  </g>
+  <g fill="#fff">
+    <circle cx="440" cy="180" r="5"/><circle cx="500" cy="280" r="5"/>
+    <circle cx="690" cy="280" r="5"/><circle cx="750" cy="170" r="5"/>
+    <circle cx="940" cy="170" r="5"/><circle cx="1000" cy="270" r="5"/>
+  </g>
+
+  <!-- blocks -->
+  <g>
+    <rect x="250" y="120" width="190" height="120" rx="14" fill="url(#blk)" stroke="#fff" stroke-opacity=".16"/>
+    <text x="270" y="150" font-size="12" fill="#e8533a" letter-spacing="2">BLOCK #1041</text>
+    <text x="270" y="183" font-size="19" fill="#fff" font-family="Georgia, serif" font-style="italic">Design ⇄ Code</text>
+    <text x="270" y="212" font-size="12" fill="#888">0x9f3a…c21</text>
+    <rect x="392" y="200" width="32" height="18" rx="9" fill="#22c55e" fill-opacity=".15" stroke="#22c55e" stroke-opacity=".6"/>
+    <text x="400" y="213" font-size="10" fill="#7ee2a0">ok</text>
+  </g>
+  <g>
+    <rect x="500" y="220" width="190" height="120" rx="14" fill="url(#blk)" stroke="#fff" stroke-opacity=".16"/>
+    <text x="520" y="250" font-size="12" fill="#e8533a" letter-spacing="2">BLOCK #1042</text>
+    <text x="520" y="283" font-size="19" fill="#fff" font-family="Georgia, serif" font-style="italic">Tutoring ⇄ Music</text>
+    <text x="520" y="312" font-size="12" fill="#888">0x41be…7d0</text>
+    <rect x="642" y="300" width="32" height="18" rx="9" fill="#22c55e" fill-opacity=".15" stroke="#22c55e" stroke-opacity=".6"/>
+    <text x="650" y="313" font-size="10" fill="#7ee2a0">ok</text>
+  </g>
+  <g>
+    <rect x="750" y="110" width="190" height="120" rx="14" fill="url(#blk)" stroke="#e8533a" stroke-opacity=".55"/>
+    <text x="770" y="140" font-size="12" fill="#e8533a" letter-spacing="2">BLOCK #1043</text>
+    <text x="770" y="173" font-size="19" fill="#fff" font-family="Georgia, serif" font-style="italic">Writing ⇄ Ads</text>
+    <text x="770" y="202" font-size="12" fill="#888">0xc07e…19a</text>
+    <rect x="892" y="190" width="32" height="18" rx="9" fill="#22c55e" fill-opacity=".15" stroke="#22c55e" stroke-opacity=".6"/>
+    <text x="900" y="203" font-size="10" fill="#7ee2a0">ok</text>
+  </g>
+  <g>
+    <rect x="1000" y="210" width="170" height="120" rx="14" fill="#0a0a0a" stroke="#00d4ff" stroke-opacity=".6" stroke-dasharray="6 6"/>
+    <text x="1020" y="240" font-size="12" fill="#00d4ff" letter-spacing="2">MINING…</text>
+    <text x="1020" y="273" font-size="19" fill="#fff" fill-opacity=".85" font-family="Georgia, serif" font-style="italic">3 pending tx</text>
+    <rect x="1020" y="296" width="120" height="6" rx="3" fill="#fff" fill-opacity=".08"/>
+    <rect x="1020" y="296" width="78" height="6" rx="3" fill="url(#link)"/>
+  </g>
+
+  <!-- token -->
+  <g filter="url(#glow)">
+    <circle cx="1095" cy="95" r="44" fill="url(#coin)"/>
+    <circle cx="1095" cy="95" r="34" fill="none" stroke="#fff" stroke-opacity=".35"/>
+  </g>
+  <text x="1095" y="106" font-size="30" fill="#fff" text-anchor="middle" font-family="Georgia, serif" font-style="italic">KD</text>
+  <circle cx="1010" cy="60" r="12" fill="url(#coin)" opacity=".7"/>
+  <circle cx="1160" cy="165" r="9" fill="url(#coin)" opacity=".6"/>
+
+  <text x="250" y="380" font-size="12" fill="#fff" fill-opacity=".35" letter-spacing="3">SKILLS IN · VALUE OUT · ON-CHAIN</text>
+</svg>

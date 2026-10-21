@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" font-family="ui-monospace, Menlo, Consolas, monospace">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0b0b"/><stop offset="1" stop-color="#050505"/></linearGradient>
+    <radialGradient id="lamp" cx="72%" cy="8%" r="55%"><stop offset="0" stop-color="#e8533a" stop-opacity=".38"/><stop offset="1" stop-color="#e8533a" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cool" cx="10%" cy="100%" r="50%"><stop offset="0" stop-color="#00d4ff" stop-opacity=".18"/><stop offset="1" stop-color="#00d4ff" stop-opacity="0"/></radialGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#fff" fill-opacity=".035"/></pattern>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <rect width="1200" height="460" fill="url(#sky)"/>
+  <rect width="1200" height="460" fill="url(#lamp)"/>
+  <rect width="1200" height="460" fill="url(#cool)"/>
+
+  <!-- perspective floor -->
+  <g stroke="#00d4ff" stroke-opacity=".12" fill="none">
+    <path d="M0 200H1200"/>
+    <path d="M600 200L-200 460M600 200L100 460M600 200L400 460M600 200L800 460M600 200L1100 460M600 200L1400 460"/>
+    <path d="M0 230H1200M0 268H1200M0 318H1200M0 384H1200"/>
+  </g>
+  <!-- buildings -->
+  <g fill="#fff" fill-opacity=".04">
+    <rect x="60" y="70" width="140" height="130"/><rect x="220" y="110" width="90" height="90"/>
+    <rect x="860" y="90" width="120" height="110"/><rect x="1000" y="50" width="160" height="150"/>
+  </g>
+
+  <!-- people & objects (silhouettes) -->
+  <g fill="#1d1d1d">
+    <!-- person 1 -->
+    <circle cx="420" cy="214" r="17"/><path d="M398 236h44l8 90h-60z"/><path d="M402 326h14v50h-14zM424 326h14v50h-14z"/>
+    <!-- person 2 -->
+    <circle cx="720" cy="226" r="12"/><path d="M704 242h32l6 64h-44z"/><path d="M707 306h10v36h-10zM723 306h10v36h-10z"/>
+    <!-- bag near person 2 -->
+    <rect x="748" y="306" width="26" height="30" rx="5"/>
+    <!-- car -->
+    <path d="M880 300c6-24 18-40 44-40h110c26 0 40 16 48 40l24 8v44H860v-44z"/>
+    <circle cx="912" cy="356" r="16" fill="#111"/><circle cx="1050" cy="356" r="16" fill="#111"/>
+  </g>
+  <g fill="#fff" fill-opacity=".06">
+    <path d="M940 268h90l12 32H928z"/>
+  </g>
+
+  <!-- YOLO detections -->
+  <g fill="none" stroke-width="2" filter="url(#glow)">
+    <rect x="388" y="190" width="72" height="194" stroke="#e8533a"/>
+    <rect x="696" y="206" width="52" height="142" stroke="#e8533a"/>
+    <rect x="744" y="300" width="36" height="42" stroke="#00d4ff"/>
+    <rect x="852" y="252" width="244" height="124" stroke="#00d4ff"/>
+  </g>
+  <g font-size="12" fill="#fff">
+    <rect x="388" y="170" width="104" height="20" fill="#e8533a"/><text x="395" y="184">person 0.94</text>
+    <rect x="696" y="186" width="104" height="20" fill="#e8533a"/><text x="703" y="200">person 0.89</text>
+    <rect x="744" y="342" width="76" height="20" fill="#00a8cc"/><text x="750" y="356">bag 0.81</text>
+    <rect x="852" y="232" width="72" height="20" fill="#00a8cc"/><text x="858" y="246">car 0.92</text>
+  </g>
+
+  <rect width="1200" height="460" fill="url(#scan)"/>
+
+  <!-- HUD -->
+  <g stroke="#fff" stroke-opacity=".55" stroke-width="2" fill="none">
+    <path d="M24 54V24h30M1146 24h30v30M1176 406v30h-30M54 436H24v-30"/>
+  </g>
+  <circle cx="48" cy="48" r="6" fill="#e8533a"/>
+  <text x="62" y="53" font-size="13" fill="#fff" letter-spacing="2">REC · CAM 01</text>
+  <text x="1150" y="408" font-size="12" fill="#fff" fill-opacity=".7" text-anchor="end" letter-spacing="1.5">YOLO · 30 FPS · 4 OBJECTS</text>
+  <g stroke="#fff" stroke-opacity=".25">
+    <path d="M600 140v20M590 150h20"/>
+  </g>
+</svg>
