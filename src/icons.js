@@ -2,6 +2,7 @@ import {
   siJavascript, siTypescript, siPython, siOpenjdk, siCplusplus, siMysql, siReact, siNextdotjs, siHtml5, siCss,
   siTailwindcss, siNodedotjs, siExpress, siFastapi, siOpenapiinitiative, siGraphql, siPostgresql, siMongodb,
   siFirebase, siDocker, siGit, siGithubactions, siFigma, siPostman, siLinux,
+  siPandas, siNumpy, siOpencv, siYolo, siGithub,
 } from "simple-icons";
 
 /* Skill name (as written in data.js) → Simple Icons entry. `hex` overrides the icon's own brand colour. */
@@ -11,6 +12,8 @@ const icons = {
   "Tailwind": siTailwindcss, "Node.js": siNodedotjs, "Express": siExpress, "FastAPI": siFastapi, "REST": siOpenapiinitiative,
   "GraphQL": siGraphql, "PostgreSQL": siPostgresql, "MongoDB": siMongodb, "Firebase": siFirebase, "Docker": siDocker,
   "Git": siGit, "GitHub Actions": siGithubactions, "Figma": siFigma, "Postman": siPostman, "Linux": siLinux,
+  "REST APIs": siOpenapiinitiative, "MySQL Workbench": siMysql, "Pandas": siPandas, "NumPy": { ...siNumpy, hex: "4DABCF" },
+  "OpenCV": siOpencv, "YOLO": siYolo, "GitHub": siGithub,
 };
 
 /* Near-black brand colours (Next.js, Express…) would vanish on the dark page, so they fall back to the text colour. */

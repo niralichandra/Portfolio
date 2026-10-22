@@ -5,21 +5,21 @@
 const PORTFOLIO = {
   name: "Nirali",
   logo: "<nirali.dev/>",
-  roles: ["Software Engineer", "Full-Stack Developer", "Problem Solver"],
-  tag: "Software Engineer / Developer",
-  availability: "Open to opportunities",
+  roles: ["Data Analyst", "ML Enthusiast", "Problem Solver"],
+  tag: "Data Analytics / Machine Learning",
+  availability: "Open to Data Analytics & ML internships",
   location: "Based in India",
   timezone: "Asia/Kolkata",
-  pitch: "I write clean, tested, reliable code — and ship products people enjoy using.",
-  heroStat: { label: "Projects shipped", value: "10+" },
+  pitch: "I turn raw data into insights — and build machine-learning systems that put them to work.",
+  heroStat: { label: "Projects built", value: "3+" },
   photo: "/profile.jpg", // put your photo in /public (portrait works best)
   cv: "/Nirali_CV.pdf", // put your CV in /public
   email: "nirali@example.com",
-  github: "",                          // your GitHub username, e.g. "nirali" — powers the live stats
+  github: "niralichandra",             // your GitHub username — powers the live stats
   socials: [
-    { label: "GitHub", url: "https://github.com/" },
-    { label: "LinkedIn", url: "https://linkedin.com/in/" },
-    { label: "LeetCode", url: "https://leetcode.com/" },
+    { label: "GitHub", url: "https://github.com/niralichandra" },
+    { label: "LinkedIn", url: "https://linkedin.com/in/niralichandra" },
+    { label: "Website", url: "https://niralichandra07.com" },
     { label: "Email", url: "mailto:nirali@example.com" },
   ],
   contactLead: "Have a role, a project, or an idea? My inbox is always open — I usually reply within a day.",
@@ -27,11 +27,11 @@ const PORTFOLIO = {
 
   // "About" section right after the hero.
   about: {
-    lead: "A Computer Science Engineering student at SRM University AP, specialising in AI & ML — passionate about building intelligent systems and meaningful digital products.",
-    body: "My interests lie at the intersection of Artificial Intelligence, Machine Learning, full-stack development and blockchain.",
+    lead: "A Computer Science Engineering student at SRM University AP, specialising in AI & ML — focused on transforming raw data into insights.",
+    body: "I work across data analysis, machine learning and predictive modelling, with a growing focus on NLP, LLMs and computer vision.",
     facts: [
       { label: "Studying", value: "B.Tech in CSE (AI & ML), SRM University AP · 2024–2028" },
-      { label: "Currently", value: "[Your current role, club or focus]" },
+      { label: "Currently", value: "Data Analytics Intern, Purple Bean Agro" },
     ],
     cta: { label: "More about me", href: "#timeline" },
   },
@@ -40,74 +40,87 @@ const PORTFOLIO = {
   strengthsIntro: {
     prompt: "So Nirali, what are you actually good at?",
     answer: [
-      "I turn **ideas into fast, polished products** — from the first sketch in Figma to a live, deployed app.",
-      "My sweet spot is **full-stack web development**: React and modern CSS on the front, Node.js and well-designed databases behind it, shipped with CI/CD.",
-      "I love **hard problems**. I break them down, write clean and tested code, and sweat the small details that make software feel delightful.",
+      "I turn **raw data into insights** — collecting, cleaning and analysing datasets with Python, SQL and Excel.",
+      "My sweet spot is **data analytics and machine learning**: spotting trends, forecasting demand, and evaluating models that predict what comes next.",
+      "Lately I've been going deep on **NLP and LLMs** — building a system that summarises and explains Supreme Court judgements.",
     ],
   },
 
   // Panel beside that text: numbers count up when scrolled into view.
   snapshot: {
     stats: [
-      { value: 3, suffix: "+", label: "Years of coding" },
-      { value: 10, suffix: "+", label: "Projects shipped" },
-      { value: 500, suffix: "+", label: "DSA problems solved" },
-      { value: 20, suffix: "+", label: "Technologies used" },
+      { value: 3, suffix: "+", label: "Projects built" },
+      { value: 3, suffix: "", label: "Certifications" },
+      { value: 1, suffix: "", label: "Analytics internship" },
+      { value: 20, suffix: "+", label: "Tools & technologies" },
     ],
     now: [
-      { label: "Building", value: "[The project you're building now]" },
-      { label: "Learning", value: "[What you're learning — e.g. system design]" },
-      { label: "Open to", value: "Internships & full-time roles" },
+      { label: "Interning", value: "Data Analytics at Purple Bean Agro" },
+      { label: "Learning", value: "[What you're learning — e.g. deep learning]" },
+      { label: "Open to", value: "Data Analytics & ML internships" },
     ],
   },
 
   // "What I'm Good At" — the cards that pass through the beam. `code` is what each card turns into.
   strengths: [
     {
-      glyph: "</>",
-      title: "Frontend Engineering",
-      desc: "Fast, accessible interfaces with React and modern CSS — pixel-precise on every screen.",
-      tags: ["React", "Next.js", "Tailwind"],
-      code: ["export default function Hero({ user }) {", "const [open, setOpen] = useState(false);", "useEffect(() => { observe(ref.current); }, []);", "return <section className=\"hero\">{user.name}</section>;", "}"],
-    },
-    {
-      glyph: "{ }",
-      title: "Backend & APIs",
-      desc: "Clean REST and GraphQL services that are secure, tested and built to scale.",
-      tags: ["Node.js", "Express", "FastAPI"],
-      code: ["app.get('/api/projects', auth, async (req, res) => {", "const rows = await db.query('SELECT * FROM projects');", "res.json({ data: rows, total: rows.length });", "});", "router.post('/login', validate(schema), login);"],
-    },
-    {
-      glyph: "λ",
-      title: "Problem Solving",
-      desc: "Strong DSA fundamentals — I break hard problems into simple, efficient solutions.",
-      tags: ["DSA", "C++", "LeetCode"],
-      code: ["int lengthOfLIS(vector<int>& a) {", "vector<int> d; for (int x : a) {", "auto it = lower_bound(d.begin(), d.end(), x);", "if (it == d.end()) d.push_back(x); else *it = x; }", "return d.size(); }"],
-    },
-    {
-      glyph: "◐",
-      title: "UI / UX Design",
-      desc: "Design systems, motion and micro-interactions that make products feel alive.",
-      tags: ["Figma", "Motion", "A11y"],
-      code: [":root { --accent: #e8533a; --ease: cubic-bezier(.25,.46,.45,.94); }", ".card:hover { transform: translateY(-4px); }", "@keyframes reveal { from { opacity: 0 } }", "@media (prefers-reduced-motion) { * { animation: none } }"],
-    },
-    {
       glyph: "▤",
-      title: "Databases & Data",
-      desc: "Well-modelled schemas and fast queries across SQL and NoSQL stores.",
-      tags: ["PostgreSQL", "MongoDB", "Redis"],
-      code: ["CREATE TABLE users (id SERIAL PRIMARY KEY, email TEXT UNIQUE);", "CREATE INDEX idx_posts_user ON posts(user_id);", "SELECT u.email, COUNT(p.id) FROM users u", "LEFT JOIN posts p ON p.user_id = u.id GROUP BY u.id;"],
+      title: "Data Analysis",
+      desc: "Collecting, cleaning and analysing datasets to find the trends and patterns that matter.",
+      tags: ["Python", "Pandas", "SQL"],
+      code: ["df = pd.read_csv('sales.csv', parse_dates=['date'])", "df = df.dropna().drop_duplicates()", "monthly = df.groupby(df.date.dt.month)['units'].sum()", "SELECT region, SUM(units) FROM sales GROUP BY region;"],
     },
     {
-      glyph: "☁",
-      title: "Cloud & DevOps",
-      desc: "Shipping with CI/CD, containers and cloud infra — from laptop to production.",
-      tags: ["Docker", "AWS", "GitHub Actions"],
-      code: ["FROM node:20-alpine AS build", "WORKDIR /app && COPY . . && RUN npm ci && npm run build", "jobs: deploy: runs-on: ubuntu-latest", "steps: - uses: actions/checkout@v4 - run: npm test"],
+      glyph: "∿",
+      title: "Machine Learning",
+      desc: "Predictive models built and evaluated properly — from regression to forecasting.",
+      tags: ["Regression", "NumPy", "Model Evaluation"],
+      code: ["X_train, X_test, y_train, y_test = train_test_split(X, y)", "model = LinearRegression().fit(X_train, y_train)", "pred = model.predict(X_test)", "print(r2_score(y_test, pred), mean_absolute_error(y_test, pred))"],
+    },
+    {
+      glyph: "¶",
+      title: "NLP & LLMs",
+      desc: "Summarising and explaining long, complex text with language models.",
+      tags: ["LLMs", "NLP", "Prompt Engineering"],
+      code: ["prompt = f'Summarise this judgement: {text}'", "summary = llm.generate(prompt, max_tokens=512)", "score = reward_model(summary, reference)", "tokens = tokenizer(text, truncation=True)"],
+    },
+    {
+      glyph: "◉",
+      title: "Computer Vision",
+      desc: "Real-time object detection on live camera feeds.",
+      tags: ["YOLO", "OpenCV", "Python"],
+      code: ["model = YOLO('yolov8n.pt')", "cap = cv2.VideoCapture(0)", "ok, frame = cap.read()", "results = model(frame, conf=0.5)", "cv2.imshow('Drishti', results[0].plot())"],
+    },
+    {
+      glyph: "◫",
+      title: "Visualisation & Reporting",
+      desc: "Dashboards and reports that turn analysis into clear, actionable decisions.",
+      tags: ["Dashboards", "Excel", "Data Viz"],
+      code: ["fig, ax = plt.subplots(figsize=(10, 4))", "ax.plot(monthly.index, monthly.values, marker='o')", "ax.set_title('Seasonal demand by month')", "fig.savefig('report.png', dpi=200)"],
+    },
+    {
+      glyph: "</>",
+      title: "Web & Tools",
+      desc: "Front-ends and APIs that put data and models in front of people.",
+      tags: ["React", "REST APIs", "Git"],
+      code: ["const res = await fetch('/api/forecast');", "const { data } = await res.json();", "return <Chart data={data} />;", "git commit -m 'Add forecast dashboard'"],
     },
   ],
 
   experience: [
+    {
+      role: "Data Analytics Intern",
+      org: "Purple Bean Agro",
+      period: "Jan 2025 — Present",
+      place: "[City / Remote]",
+      summary: "Market research and demand analysis across agricultural product categories.",
+      points: [
+        "Conducted market research and competitive analysis to identify regional demand trends, growth opportunities and business insights across agricultural product categories.",
+        "Collected, cleaned and analysed datasets using Python, SQL and Excel to evaluate market patterns, seasonal trends and demand forecasting.",
+        "Developed dashboards, visualisations and actionable reports to communicate insights and support data-driven strategic planning and business forecasting.",
+      ],
+      stack: ["Python", "SQL", "Excel", "Data Viz"],
+    },
     {
       role: "Summer Research Intern",
       org: "Under Dr. Avinash Trivedi",
@@ -120,18 +133,6 @@ const PORTFOLIO = {
         "Compared generated summaries against the original judgements to check they kept the key facts and reasoning.",
       ],
       stack: ["Python", "NLP", "Legal AI"],
-    },
-    {
-      role: "Frontend Developer",
-      org: "Purplebean Agro Limited",
-      period: "[Month 2024 — Month 2025]",
-      place: "[City / Remote]",
-      summary: "Built the web frontend for an agro company.",
-      points: [
-        "Built and maintained the company's web frontend.",
-        "Turned designs into responsive pages that work well on phones and desktops.",
-      ],
-      stack: ["React", "JavaScript", "CSS"],
     },
     {
       role: "Graphic Designer & Social Media Manager",
@@ -154,9 +155,10 @@ const PORTFOLIO = {
       title: "KaushalDhan",
       type: "Blockchain · Web3",
       year: "[2025]",
-      desc: "A blockchain economy where skills are the currency.",
-      about: "KaushalDhan is a skill-exchange economy that runs entirely on the blockchain. People trade skills and services with each other, and every exchange, payment and activity is an on-chain transaction — transparent, tamper-proof, and with no middleman.",
+      desc: "A digital platform for financial empowerment and skill-based opportunities.",
+      about: "KaushalDhan is a platform focused on financial empowerment and skill-based opportunities, with a user-friendly interface for accessing resources and managing financial goals. Skills and services are exchanged on the blockchain, so every trade and payment is transparent and tamper-proof.",
       highlights: [
+        "User-friendly interface for accessing resources and managing financial goals",
         "Skill-for-skill exchange, with every trade recorded as a blockchain transaction",
         "The whole economy — balances, exchanges and activity — runs on-chain",
         "Every transaction is public and verifiable, so the system stays trustworthy",
@@ -167,17 +169,17 @@ const PORTFOLIO = {
       image: "/projects/kaushaldhan.svg",
     },
     {
-      title: "Legal Precedent & Summarization",
+      title: "Legal Judgment Analysis",
       type: "AI · NLP",
       year: "[2025]",
-      desc: "Summarizes court judgements and finds relevant precedents.",
-      about: "An AI tool for legal research. It condenses long Supreme Court judgements into short, readable summaries and surfaces past judgements (precedents) relevant to a case — turning hours of reading into minutes.",
+      desc: "LLM-based analysis and summarisation of Supreme Court judgements.",
+      about: "An NLP system that analyses and summarises long Supreme Court of India judgements using LLMs and Python — turning hours of reading into minutes, with explanations of the court's reasoning.",
       highlights: [
-        "Summarizes lengthy judgements into concise, readable briefs",
-        "Finds precedents related to a given case",
-        "Built to handle long, complex legal language",
+        "Summarises lengthy judgements into concise, readable briefs",
+        "Evaluated WRR-Tune, reward-based and SAC-based approaches",
+        "Compared them on explanation quality and reasoning accuracy",
       ],
-      stack: ["Python", "NLP", "Transformers"],
+      stack: ["Python", "LLMs", "NLP"],
       live: "",
       code: "",
       image: "/projects/legal.svg",
@@ -205,17 +207,16 @@ const PORTFOLIO = {
       org: "SRM University AP",
       period: "2024 — 2028",
       place: "Amaravati, Andhra Pradesh",
-      points: ["[Relevant coursework: DSA, OS, DBMS, Networks]"],
+      points: [],
       stack: [],
     },
   ],
 
   skills: [
-    { group: "Languages", items: ["JavaScript", "TypeScript", "Python", "Java", "C++", "SQL"] },
-    { group: "Frontend", items: ["React", "Next.js", "HTML", "CSS", "Tailwind"] },
-    { group: "Backend", items: ["Node.js", "Express", "FastAPI", "REST", "GraphQL"] },
-    { group: "Data & Cloud", items: ["PostgreSQL", "MongoDB", "Firebase", "AWS", "Docker"] },
-    { group: "Tools", items: ["Git", "GitHub Actions", "Figma", "Postman", "Linux"] },
+    { group: "Languages", items: ["Python", "Java", "SQL"] },
+    { group: "Data & ML", items: ["Pandas", "NumPy", "Data Visualization", "Regression", "Model Evaluation"] },
+    { group: "AI, NLP & CV", items: ["LLMs", "NLP", "Prompt Engineering", "Text Summarization", "YOLO", "OpenCV"] },
+    { group: "Web & Tools", items: ["React", "REST APIs", "Git", "GitHub", "MySQL Workbench", "Excel"] },
   ],
 
   achievements: [
@@ -224,8 +225,10 @@ const PORTFOLIO = {
   ],
 
   certifications: [
-    { title: "[Certification Name]", meta: "[Issuer · 2025]", desc: "", link: "#" },
-    { title: "[Certification Name]", meta: "[Issuer · 2024]", desc: "", link: "#" },
+    // add each certificate's verify URL as `link` to show a "Verify credential" link
+    { title: "MongoDB Associate Developer", meta: "MongoDB", desc: "", link: "" },
+    { title: "Object-Oriented Hierarchy with Java", meta: "Coursera", desc: "", link: "" },
+    { title: "OOPs with Java", meta: "Coursera", desc: "", link: "" },
   ],
 
   leadership: [
@@ -234,10 +237,9 @@ const PORTFOLIO = {
   ],
 
   timeline: [
-    { year: "2024", title: "Started B.Tech at SRM University AP", desc: "[Wrote my first real program.]" },
-    { year: "2023", title: "[First hackathon]", desc: "[What happened.]" },
-    { year: "2024", title: "[First internship]", desc: "[What you learned.]" },
-    { year: "2025", title: "[Shipped X]", desc: "[Milestone.]" },
+    { year: "2024", title: "Started B.Tech at SRM University AP", desc: "Computer Science & Engineering, specialising in AI & ML." },
+    { year: "2025", title: "Data Analytics Intern at Purple Bean Agro", desc: "Market research, demand forecasting and dashboards for agricultural products." },
+    { year: "2025", title: "Legal Judgment Analysis", desc: "Built an LLM-based system to summarise and explain Supreme Court judgements." },
   ],
 
   testimonials: [
