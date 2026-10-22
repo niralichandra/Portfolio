@@ -139,18 +139,22 @@ export function Projects({ data }) {
 }
 
 /* ── SKILLS ── */
+/* Endless horizontal marquee: the groups are rendered twice so the track can loop seamlessly; hover pauses it. */
 export function Skills({ data }) {
+  const n = data.skills.length;
   return (
     <Section id="skills">
       <Head n="05" tag="Arsenal">Technical <em>Skills</em></Head>
-      <div className="skill-grid">
-        {data.skills.map((g, i) => (
-          <Reveal key={g.group} variant="s" className="skill-block card-3d" delay={i * 0.08} {...tilt}>
-            <h4>{g.group}</h4>
-            <Chips items={g.items} />
-          </Reveal>
-        ))}
-      </div>
+      <Reveal variant="s" className="skill-marquee">
+        <div className="skill-track">
+          {[...data.skills, ...data.skills].map((g, i) => (
+            <div key={i} className="skill-block card-3d" aria-hidden={i >= n || undefined} {...tilt}>
+              <h4>{g.group}</h4>
+              <Chips items={g.items} />
+            </div>
+          ))}
+        </div>
+      </Reveal>
     </Section>
   );
 }
