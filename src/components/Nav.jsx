@@ -3,8 +3,7 @@ import { magnetic, useScramble } from "../hooks/motion";
 
 export const SECTIONS = [
   ["about", "About"], ["strengths", "Strengths"], ["experience", "Experience"], ["projects", "Projects"], ["education", "Education"],
-  ["skills", "Skills"], ["achievements", "Achievements"], ["profiles", "Profiles"],
-  ["leadership", "Leadership"], ["timeline", "Timeline"],
+  ["skills", "Skills"], ["timeline", "Timeline"],
 ];
 
 export default function Nav({ data, onSearch }) {

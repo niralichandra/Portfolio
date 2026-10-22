@@ -42,9 +42,8 @@ export function About({ data }) {
   const { lead, body, facts, cta } = data.about;
   return (
     <Section id="about" className="about">
-      <Reveal className="s-tag about-tag">01 — About</Reveal>
+      <Head n="01" tag="About">I'm <em>{data.name}</em>.</Head>
       <div className="about-main">
-        <Reveal as="h2" className="about-title">I'm <span>{data.name}.</span></Reveal>
         <Reveal as="p" className="about-lead" delay={0.1}>{lead}</Reveal>
         <Reveal as="p" className="about-body" delay={0.2}>{body}</Reveal>
         <Reveal as="dl" className="about-facts" delay={0.3}>
@@ -53,7 +52,7 @@ export function About({ data }) {
           ))}
         </Reveal>
         <Reveal delay={0.4}>
-          <a className="about-cta" href={cta.href} {...magnetic}>{cta.label} <span aria-hidden="true">→</span></a>
+          <a className="btn-hire magnetic about-cta" href={cta.href} {...magnetic}>{cta.label} <span className="btn-hire-arrow">→</span></a>
         </Reveal>
       </div>
     </Section>
@@ -189,113 +188,6 @@ export function Skills({ data }) {
   );
 }
 
-/* ── INFO CARDS (achievements, certs, leadership) ── */
-const InfoGrid = ({ items, linkText = "Verify credential ↗" }) => (
-  <div className="card-grid">
-    {items.map((c, i) => (
-      <Reveal as="article" key={i} className="info-card card-3d" delay={i * 0.1} {...tilt}>
-        <div className="info-meta">{c.meta}</div>
-        <h3>{c.title}</h3>
-        {c.desc && <p>{c.desc}</p>}
-        {c.link && <a href={c.link} target="_blank" rel="noopener" data-label={c.title}>{linkText}</a>}
-      </Reveal>
-    ))}
-  </div>
-);
-
-export function Honors({ data }) {
-  return (
-    <Section id="achievements">
-      <Head n="07" tag="Honors & Credentials"><em>Recognition</em></Head>
-      <Tabs tabs={[
-        { label: "Achievements", content: <InfoGrid items={data.achievements} linkText="Open ↗" /> },
-        { label: "Certifications", content: <InfoGrid items={data.certifications} /> },
-      ]} />
-    </Section>
-  );
-}
-
-export function Leadership({ data }) {
-  return (
-    <Section id="leadership">
-      <Head n="09" tag="Community">Leadership &amp; <em>Volunteering</em></Head>
-      <InfoGrid items={data.leadership} />
-    </Section>
-  );
-}
-
-/* ── GITHUB LIVE ── */
-const LANG_COLORS = ["var(--red)", "var(--cyan)", "#f5c542", "#39d353", "#a78bfa"];
-
-export function Profiles({ data }) {
-  const [gh, setGh] = useState({ state: data.github ? "loading" : "unset" });
-
-  useEffect(() => {
-    if (!data.github) return;
-    const get = url => fetch(url).then(r => { if (!r.ok) throw new Error(); return r.json(); });
-    Promise.all([
-      get(`https://api.github.com/users/${data.github}`),
-      get(`https://api.github.com/users/${data.github}/repos?per_page=100&sort=pushed`),
-    ])
-      .then(([user, repos]) => {
-        const langs = {};
-        repos.forEach(r => r.language && (langs[r.language] = (langs[r.language] || 0) + 1));
-        const top = Object.entries(langs).sort((a, b) => b[1] - a[1]).slice(0, 5);
-        setGh({
-          state: "ok",
-          stats: [
-            ["Public repos", user.public_repos],
-            ["Followers", user.followers],
-            ["Stars earned", repos.reduce((s, r) => s + r.stargazers_count, 0)],
-            ["Last push", repos[0] ? new Date(repos[0].pushed_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "—"],
-          ],
-          repos: repos.filter(r => !r.fork).slice(0, 4),
-          top,
-          total: top.reduce((s, [, n]) => s + n, 0),
-        });
-      })
-      .catch(() => setGh({ state: "error" }));
-  }, [data.github]);
-
-  const status = { loading: "Loading…", unset: "Add your username in src/data.js", error: "Couldn't reach GitHub right now" }[gh.state];
-
-  return (
-    <Section id="profiles">
-      <Head n="08" tag="Profiles">Live <em>Coding</em> Stats</Head>
-      <Reveal className={"profile-card" + (gh.state === "unset" ? " muted-card" : "")}>
-        <div className="profile-head">
-          <div>
-            <div className="profile-name">GitHub</div>
-            {data.github && <a className="profile-handle" href={`https://github.com/${data.github}`} target="_blank" rel="noopener">@{data.github}</a>}
-          </div>
-          <span className="profile-status">{gh.state === "ok" ? <><span className="live-dot" /> Live</> : status}</span>
-        </div>
-        {gh.state === "ok" && (
-          <>
-            <div className="profile-stats">
-              {gh.stats.map(([l, v]) => <div key={l}><div className="live-label">{l}</div><div className="live-value">{v}</div></div>)}
-            </div>
-            <div className="profile-sub">Recent repositories</div>
-            <div className="repo-list">
-              {gh.repos.map(r => (
-                <a key={r.id} className="repo" href={r.html_url} target="_blank" rel="noopener" data-label={r.name}>
-                  <strong>{r.name}</strong><span>{r.description || "No description"}</span>
-                  <small>{r.language} ★ {r.stargazers_count}</small>
-                </a>
-              ))}
-            </div>
-            <div className="profile-sub">Top languages</div>
-            <div className="lang-bar">{gh.top.map(([l, n], i) => <span key={l} style={{ flex: n, background: LANG_COLORS[i] }} />)}</div>
-            <div className="lang-legend">
-              {gh.top.map(([l, n], i) => <span key={l}><i style={{ background: LANG_COLORS[i] }} />{l} {Math.round((n / gh.total) * 100)}%</span>)}
-            </div>
-          </>
-        )}
-      </Reveal>
-    </Section>
-  );
-}
-
 /* ── JOURNEY ── */
 export function Journey({ data }) {
   const timeline = (
@@ -320,7 +212,7 @@ export function Journey({ data }) {
   );
   return (
     <Section id="timeline">
-      <Head n="10" tag="Journey">The <em>Story</em> So Far</Head>
+      <Head n="07" tag="Journey">The <em>Story</em> So Far</Head>
       <Tabs tabs={[{ label: "Timeline", content: timeline }, { label: "Testimonials", content: testimonials }]} />
     </Section>
   );

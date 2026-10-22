@@ -548,21 +548,14 @@ section { padding: 110px var(--gutter); position: relative; }
   .pinfo-next { margin-left: 0; }
 }
 
-/* About — tag in a narrow left column, content in a wide right one */
-.about .section-inner { display: grid; grid-template-columns: minmax(160px, 1fr) minmax(0, 2.4fr); gap: 48px; }
-.about-tag { align-self: start; }
-.about-main { max-width: 860px; }
-.about-title { font-family: var(--font); font-size: clamp(56px, 8vw, 120px); font-weight: 600; letter-spacing: -0.05em; line-height: 0.95; margin-bottom: 44px; background: linear-gradient(180deg, var(--text-strong) 30%, var(--muted)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.about-title span { color: var(--muted); -webkit-text-fill-color: var(--muted); }
-.about-lead { font-size: clamp(22px, 2.4vw, 36px); line-height: 1.45; letter-spacing: -0.02em; color: var(--text-strong); }
-.about-body { margin-top: 36px; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.7; color: var(--muted); }
-.about-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 52px 0 0; padding-top: 32px; border-top: 1px solid var(--border); }
-.about-facts dt { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+/* About */
+.about-main { max-width: 900px; }
+.about-lead { font-size: clamp(20px, 2.2vw, 32px); line-height: 1.45; letter-spacing: -0.02em; color: var(--text-strong); }
+.about-body { margin-top: 28px; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.7; color: var(--muted); }
+.about-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 48px 0 0; padding-top: 28px; border-top: 1px solid var(--border); }
+.about-facts dt { font-family: var(--mono); font-size: 11px; color: var(--red); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
 .about-facts dd { margin: 0; font-size: 16px; line-height: 1.55; color: var(--text-strong); }
-.about-cta { display: inline-flex; align-items: center; gap: 14px; margin-top: 48px; padding: 16px 26px; border: 1px solid rgba(var(--ink-rgb), 0.25); border-radius: 999px; font-size: 17px; font-weight: 500; color: var(--text-strong); text-decoration: none; transition: border-color 0.3s, background 0.3s, color 0.3s; }
-.about-cta:hover { border-color: var(--text-strong); background: var(--text-strong); color: var(--bg); }
-.about-cta span { transition: transform 0.3s var(--ease); }
-.about-cta:hover span { transform: translateX(4px); }
+.about-cta { margin-top: 44px; }
 
 /* Skills — full-bleed logo marquee */
 .skills { padding-left: 0; padding-right: 0; overflow: hidden; }
@@ -710,7 +703,6 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-i
   .gen-body { padding-left: 0; }
   .gen-prompt p { font-size: 14px; }
   .proj-grid, .card-grid { grid-template-columns: 1fr; }
-  .about .section-inner { grid-template-columns: 1fr; gap: 24px; }
   .about-facts { grid-template-columns: 1fr; gap: 24px; }
   .skill-item { padding-top: 22px; padding-bottom: 22px; }
   .proj-card.featured { grid-column: auto; }
