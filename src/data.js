@@ -190,10 +190,10 @@ const PORTFOLIO = {
 
   education: [
     {
-      role: "[B.Tech in Computer Science]",
-      org: "[University Name]",
-      period: "[2022 — 2026]",
-      place: "[CGPA: 9.0 / 10]",
+      role: "B.Tech in Computer Science & Engineering (AI & ML)",
+      org: "SRM University AP",
+      period: "2024 — 2028",
+      place: "Amaravati, Andhra Pradesh",
       points: ["[Relevant coursework: DSA, OS, DBMS, Networks]"],
       stack: [],
     },
@@ -223,7 +223,7 @@ const PORTFOLIO = {
   ],
 
   timeline: [
-    { year: "2022", title: "Started B.Tech", desc: "[Wrote my first real program.]" },
+    { year: "2024", title: "Started B.Tech at SRM University AP", desc: "[Wrote my first real program.]" },
     { year: "2023", title: "[First hackathon]", desc: "[What happened.]" },
     { year: "2024", title: "[First internship]", desc: "[What you learned.]" },
     { year: "2025", title: "[Shipped X]", desc: "[Milestone.]" },
