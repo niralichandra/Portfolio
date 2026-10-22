@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { magnetic, useClock, useTypewriter } from "../hooks/motion";
-import NeuralField from "./NeuralField";
+import MechFlower from "./MechFlower";
 
 export default function Hero({ data }) {
   const role = useTypewriter(data.roles);
@@ -9,7 +9,7 @@ export default function Hero({ data }) {
 
   return (
     <header className={"hero" + (photoOK ? "" : " no-photo")} id="top">
-      {photoOK ? <img className="hero-photo" src={data.photo} alt={data.name} onError={() => setPhotoOK(false)} /> : <NeuralField />}
+      {photoOK ? <img className="hero-photo" src={data.photo} alt={data.name} onError={() => setPhotoOK(false)} /> : <MechFlower />}
       <div className="hero-vignette" />
       <div className="scanline" />
       <div className="shape shape-ring1" />
