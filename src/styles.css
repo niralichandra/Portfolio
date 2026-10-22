@@ -131,6 +131,11 @@ nav.scrolled { background: var(--nav-glass); backdrop-filter: blur(20px); paddin
 @keyframes heroBreath { to { transform: translateX(-50%) scale(1.055); } }
 
 /* No photo: a field of lines that ripples around the cursor fills the hero instead */
+.hero-flower {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -52%); z-index: 1;
+  width: min(56vw, 860px); height: min(78vh, 720px); pointer-events: none;
+  animation: photoFade 1.4s var(--ease) both 0.7s;
+}
 .hero-wave {
   position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none;
   animation: photoFade 1.4s var(--ease) both 0.5s;
@@ -677,6 +682,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-i
   .nav-search { width: 36px; justify-content: center; padding: 0; }
   .hero-photo { width: 100%; }
   .hero-wave { opacity: 0.7; }
+  .hero-flower { width: 100vw; height: 62vh; opacity: 0.6; }
   .hero-left { max-width: none; right: var(--gutter); bottom: 120px; }
   .hero-hi { font-size: 50px; }
   .hero-social { bottom: 40px; gap: 18px; }

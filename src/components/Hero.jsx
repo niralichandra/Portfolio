@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { magnetic, useClock, useTypewriter } from "../hooks/motion";
 import WaveField from "./WaveField";
+import GlassFlower from "./GlassFlower";
 
 export default function Hero({ data }) {
   const role = useTypewriter(data.roles);
@@ -9,7 +10,7 @@ export default function Hero({ data }) {
 
   return (
     <header className={"hero" + (photoOK ? "" : " no-photo")} id="top">
-      {photoOK ? <img className="hero-photo" src={data.photo} alt={data.name} onError={() => setPhotoOK(false)} /> : <WaveField />}
+      {photoOK ? <img className="hero-photo" src={data.photo} alt={data.name} onError={() => setPhotoOK(false)} /> : <><WaveField /><GlassFlower /></>}
       <div className="hero-vignette" />
       <div className="scanline" />
       <div className="shape shape-ring1" />
