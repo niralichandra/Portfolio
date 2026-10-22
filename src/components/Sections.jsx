@@ -5,6 +5,7 @@ import StrengthsBeam from "./StrengthsBeam";
 import GenText from "./GenText";
 import Snapshot from "./Snapshot";
 import ProjectStack from "./ProjectStack";
+import { brand } from "../icons";
 
 const Chips = ({ items }) =>
   items?.length ? <div className="chips">{items.map(i => <span key={i}>{i}</span>)}</div> : null;
@@ -139,23 +140,29 @@ export function Projects({ data }) {
 }
 
 /* ── SKILLS ── */
-/* Endless horizontal marquee: the groups are rendered twice so the track can loop seamlessly; hover pauses it. */
+/* Endless logo marquee: every skill in its brand colour. The list is rendered twice so the track loops seamlessly; hover pauses it. */
 export function Skills({ data }) {
-  const n = data.skills.length;
+  const items = data.skills.flatMap(g => g.items);
   return (
-    <Section id="skills">
-      <Head n="05" tag="Arsenal">Technical <em>Skills</em></Head>
-      <Reveal variant="s" className="skill-marquee">
-        <div className="skill-track">
-          {[...data.skills, ...data.skills].map((g, i) => (
-            <div key={i} className="skill-block card-3d" aria-hidden={i >= n || undefined} {...tilt}>
-              <h4>{g.group}</h4>
-              <Chips items={g.items} />
-            </div>
-          ))}
-        </div>
+    <section id="skills" className="skills">
+      <div className="section-inner">
+        <Head n="05" tag="Arsenal">Technical <em>Skills</em></Head>
+      </div>
+      <Reveal className="skill-marquee">
+        <ul className="skill-track">
+          {[...items, ...items].map((name, i) => {
+            const { path, color } = brand(name);
+            return (
+              <li key={i} className="skill-item" style={{ color }} aria-hidden={i >= items.length || undefined}>
+                {path && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={path} fill="currentColor" /></svg>}
+                <span>{name}</span>
+                <span className="skill-star" aria-hidden="true">✶</span>
+              </li>
+            );
+          })}
+        </ul>
       </Reveal>
-    </Section>
+    </section>
   );
 }
 
