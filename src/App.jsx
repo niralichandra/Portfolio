@@ -4,7 +4,7 @@ import { Cursor, LinkTransition, PageIntro, ScrollProgress } from "./components/
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import CommandPalette from "./components/CommandPalette";
-import { Contact, Education, Experience, Honors, Journey, Leadership, Profiles, Projects, Skills, Strengths } from "./components/Sections";
+import { About, Contact, Education, Experience, Honors, Journey, Leadership, Profiles, Projects, Skills, Strengths } from "./components/Sections";
 import { useClock } from "./hooks/motion";
 
 function Footer() {
@@ -30,6 +30,7 @@ export default function App() {
       <Nav data={data} onSearch={() => setPalette(true)} />
       <Hero data={data} />
       <main>
+        <About data={data} />
         <Strengths data={data} />
         <Experience data={data} />
         <Projects data={data} />

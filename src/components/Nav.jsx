@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { magnetic, useScramble } from "../hooks/motion";
 
 export const SECTIONS = [
-  ["strengths", "Strengths"], ["experience", "Experience"], ["projects", "Projects"], ["education", "Education"],
+  ["about", "About"], ["strengths", "Strengths"], ["experience", "Experience"], ["projects", "Projects"], ["education", "Education"],
   ["skills", "Skills"], ["achievements", "Achievements"], ["profiles", "Profiles"],
   ["leadership", "Leadership"], ["timeline", "Timeline"],
 ];

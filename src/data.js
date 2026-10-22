@@ -25,6 +25,17 @@ const PORTFOLIO = {
   contactLead: "Have a role, a project, or an idea? My inbox is always open — I usually reply within a day.",
   tagline: "Ship fast. Think deeper. Break things. Rebuild better.",
 
+  // "About" section right after the hero.
+  about: {
+    lead: "A Computer Science Engineering student at SRM University AP, specialising in AI & ML — passionate about building intelligent systems and meaningful digital products.",
+    body: "My interests lie at the intersection of Artificial Intelligence, Machine Learning, full-stack development and blockchain.",
+    facts: [
+      { label: "Studying", value: "B.Tech in CSE (AI & ML), SRM University AP · 2024–2028" },
+      { label: "Currently", value: "[Your current role, club or focus]" },
+    ],
+    cta: { label: "More about me", href: "#timeline" },
+  },
+
   // Text under the strength cards, typed out like an AI reply. Wrap words in **double stars** to highlight them.
   strengthsIntro: {
     prompt: "So Nirali, what are you actually good at?",

@@ -37,12 +37,35 @@ function Tabs({ tabs }) {
   );
 }
 
+/* ── ABOUT ── */
+export function About({ data }) {
+  const { lead, body, facts, cta } = data.about;
+  return (
+    <Section id="about" className="about">
+      <Reveal className="s-tag about-tag">01 — About</Reveal>
+      <div className="about-main">
+        <Reveal as="h2" className="about-title">I'm <span>{data.name}.</span></Reveal>
+        <Reveal as="p" className="about-lead" delay={0.1}>{lead}</Reveal>
+        <Reveal as="p" className="about-body" delay={0.2}>{body}</Reveal>
+        <Reveal as="dl" className="about-facts" delay={0.3}>
+          {facts.map(f => (
+            <div key={f.label}><dt>{f.label}</dt><dd>{f.value}</dd></div>
+          ))}
+        </Reveal>
+        <Reveal delay={0.4}>
+          <a className="about-cta" href={cta.href} {...magnetic}>{cta.label} <span aria-hidden="true">→</span></a>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
+
 /* ── STRENGTHS (card beam) ── */
 export function Strengths({ data }) {
   return (
     <section id="strengths" className="strengths">
       <div className="section-inner">
-        <Head n="01" tag="Strengths">What I'm <em>Good At</em></Head>
+        <Head n="02" tag="Strengths">What I'm <em>Good At</em></Head>
       </div>
       <Reveal variant="s"><StrengthsBeam items={data.strengths} /></Reveal>
       <div className="section-inner strengths-bottom">
@@ -87,7 +110,7 @@ export function Experience({ data }) {
 
   return (
     <Section id="experience">
-      <Head n="02" tag="Experience">Where I've <em>Worked</em></Head>
+      <Head n="03" tag="Experience">Where I've <em>Worked</em></Head>
       <div className="xp" ref={list}>
         <div className="xp-rail" aria-hidden="true"><div className="xp-fill" /></div>
         <ol className="xp-list">
@@ -123,7 +146,7 @@ export function Experience({ data }) {
 export function Education({ data }) {
   return (
     <Section id="education">
-      <Head n="04" tag="Academics">My <em>Education</em></Head>
+      <Head n="05" tag="Academics">My <em>Education</em></Head>
       <div className="exp-grid">{data.education.map((e, i) => <ExpCard key={i} e={e} i={i} />)}</div>
     </Section>
   );
@@ -133,7 +156,7 @@ export function Education({ data }) {
 export function Projects({ data }) {
   return (
     <Section id="projects">
-      <Head n="03" tag="Projects">Things I've <em>Built</em></Head>
+      <Head n="04" tag="Projects">Things I've <em>Built</em></Head>
       <Reveal><ProjectStack projects={data.projects} logo={data.logo} /></Reveal>
     </Section>
   );
@@ -146,7 +169,7 @@ export function Skills({ data }) {
   return (
     <section id="skills" className="skills">
       <div className="section-inner">
-        <Head n="05" tag="Arsenal">Technical <em>Skills</em></Head>
+        <Head n="06" tag="Arsenal">Technical <em>Skills</em></Head>
       </div>
       <Reveal className="skill-marquee">
         <ul className="skill-track">
@@ -183,7 +206,7 @@ const InfoGrid = ({ items, linkText = "Verify credential ↗" }) => (
 export function Honors({ data }) {
   return (
     <Section id="achievements">
-      <Head n="06" tag="Honors & Credentials"><em>Recognition</em></Head>
+      <Head n="07" tag="Honors & Credentials"><em>Recognition</em></Head>
       <Tabs tabs={[
         { label: "Achievements", content: <InfoGrid items={data.achievements} linkText="Open ↗" /> },
         { label: "Certifications", content: <InfoGrid items={data.certifications} /> },
@@ -195,7 +218,7 @@ export function Honors({ data }) {
 export function Leadership({ data }) {
   return (
     <Section id="leadership">
-      <Head n="08" tag="Community">Leadership &amp; <em>Volunteering</em></Head>
+      <Head n="09" tag="Community">Leadership &amp; <em>Volunteering</em></Head>
       <InfoGrid items={data.leadership} />
     </Section>
   );
@@ -238,7 +261,7 @@ export function Profiles({ data }) {
 
   return (
     <Section id="profiles">
-      <Head n="07" tag="Profiles">Live <em>Coding</em> Stats</Head>
+      <Head n="08" tag="Profiles">Live <em>Coding</em> Stats</Head>
       <Reveal className={"profile-card" + (gh.state === "unset" ? " muted-card" : "")}>
         <div className="profile-head">
           <div>
@@ -297,7 +320,7 @@ export function Journey({ data }) {
   );
   return (
     <Section id="timeline">
-      <Head n="09" tag="Journey">The <em>Story</em> So Far</Head>
+      <Head n="10" tag="Journey">The <em>Story</em> So Far</Head>
       <Tabs tabs={[{ label: "Timeline", content: timeline }, { label: "Testimonials", content: testimonials }]} />
     </Section>
   );
