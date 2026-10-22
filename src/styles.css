@@ -569,10 +569,6 @@ section { padding: 110px var(--gutter); position: relative; }
 .skill-star { margin-left: 0.55em; font-size: 0.4em; color: var(--muted); }
 
 /* Tabs */
-.tabs { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--border); border-radius: 40px; margin: -24px 0 40px; }
-.tab { padding: 9px 18px; border: 0; border-radius: 40px; background: none; color: var(--muted); font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; transition: background 0.3s var(--ease), color 0.3s; }
-.tab:hover { color: var(--text-strong); }
-.tab.active { background: var(--red); color: #fff; }
 
 /* Info cards */
 .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
@@ -585,9 +581,6 @@ section { padding: 110px var(--gutter); position: relative; }
 .info-card p { color: var(--muted); font-size: 14px; margin-top: 8px; }
 .info-card a { display: inline-block; margin-top: 16px; font-family: var(--mono); font-size: 12px; color: var(--text-soft); text-decoration: none; }
 .info-card a:hover { color: var(--red); }
-.quote-card blockquote { font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.45; color: var(--text-strong); }
-.quote-card figcaption { margin-top: 20px; display: flex; flex-direction: column; font-size: 14px; }
-.quote-card figcaption span { color: var(--muted); font-family: var(--mono); font-size: 11px; }
 
 /* GitHub profile */
 .profile-card { border: 1px solid var(--border); background: var(--bg2); padding: 36px; }
@@ -683,7 +676,6 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-i
   .scroll-cue { display: none; }
   section { padding: 80px var(--gutter); }
   .s-title { font-size: 30px; margin-bottom: 36px; }
-  .tabs { margin-top: -12px; }
   .exp-card { padding: 30px 22px; }
   .xp { padding-left: 34px; }
   .xp-rail { left: 6px; }

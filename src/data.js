@@ -242,8 +242,5 @@ const PORTFOLIO = {
     { year: "2025", title: "Legal Judgment Analysis", desc: "Built an LLM-based system to summarise and explain Supreme Court judgements." },
   ],
 
-  testimonials: [
-    { quote: "[A kind word from a mentor, manager or teammate.]", who: "[Name]", meta: "[Role, Company]" },
-  ],
 };
 export default PORTFOLIO;

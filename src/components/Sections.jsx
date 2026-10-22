@@ -23,20 +23,6 @@ function Section({ id, className, children }) {
   return <section id={id} className={className}><div className="section-inner">{children}</div></section>;
 }
 
-function Tabs({ tabs }) {
-  const [active, setActive] = useState(0);
-  return (
-    <>
-      <Reveal className="tabs">
-        {tabs.map((t, i) => (
-          <button key={t.label} className={"tab" + (i === active ? " active" : "")} onClick={() => setActive(i)}>{t.label}</button>
-        ))}
-      </Reveal>
-      <div className="tab-panel" key={active}>{tabs[active].content}</div>
-    </>
-  );
-}
-
 /* ── ABOUT ── */
 export function About({ data }) {
   const { lead, body, facts, cta } = data.about;
@@ -200,20 +186,10 @@ export function Journey({ data }) {
       ))}
     </ol>
   );
-  const testimonials = (
-    <div className="card-grid">
-      {data.testimonials.map((t, i) => (
-        <Reveal as="figure" key={i} className="info-card quote-card" delay={i * 0.1}>
-          <blockquote>“{t.quote}”</blockquote>
-          <figcaption><strong>{t.who}</strong><span>{t.meta}</span></figcaption>
-        </Reveal>
-      ))}
-    </div>
-  );
   return (
     <Section id="timeline">
       <Head n="07" tag="Journey">The <em>Story</em> So Far</Head>
-      <Tabs tabs={[{ label: "Timeline", content: timeline }, { label: "Testimonials", content: testimonials }]} />
+      {timeline}
     </Section>
   );
 }
