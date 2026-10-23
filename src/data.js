@@ -13,7 +13,9 @@ const PORTFOLIO = {
   pitch: "I turn raw data into insights — and build machine-learning systems that put them to work.",
   heroStat: { label: "Projects built", value: "3+" },
   photo: "/profile.jpg", // put your photo in /public (portrait works best)
-  cv: "/Nirali_CV.pdf", // put your CV in /public
+  // CV on Google Drive: `cv` opens it in the browser, `cvDownload` downloads the PDF directly
+  cv: "https://drive.google.com/file/d/1ujjL61ant9ZtibY5vnlilyubAvjJHD1K/view?usp=sharing",
+  cvDownload: "https://drive.google.com/uc?export=download&id=1ujjL61ant9ZtibY5vnlilyubAvjJHD1K",
   email: "nirali@example.com",
   github: "niralichandra",             // your GitHub username — powers the live stats
   socials: [

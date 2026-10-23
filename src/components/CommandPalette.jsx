@@ -12,7 +12,8 @@ export default function CommandPalette({ data, open, setOpen }) {
     return [
       ...SECTIONS.map(([id, l]) => ({ label: `Go to ${l}`, hint: "Section", run: go(id, l) })),
       { label: "Contact me", hint: "Section", run: go("contact", "Let's talk") },
-      { label: "Open CV", hint: "Action", run: () => window.open(data.cv, "_blank", "noopener") },
+      { label: "View CV", hint: "Action", run: () => window.open(data.cv, "_blank", "noopener") },
+      { label: "Download CV", hint: "Action", run: () => { location.href = data.cvDownload; } },
       { label: "Copy email", hint: "Action", run: () => navigator.clipboard?.writeText(data.email) },
       ...data.socials.map(s => ({ label: `Open ${s.label}`, hint: "Link", run: () => window.open(s.url, "_blank", "noopener") })),
     ];

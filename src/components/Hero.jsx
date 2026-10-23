@@ -25,7 +25,7 @@ export default function Hero({ data }) {
           <a href="#contact" className="btn-hire magnetic" data-label="Let's talk" {...magnetic}>
             Hire Me <span className="btn-hire-arrow">→</span>
           </a>
-          <a href={data.cv} className="btn-cv magnetic" target="_blank" rel="noopener" data-label="Curriculum Vitae" {...magnetic}>Download CV</a>
+          <a href={data.cvDownload} className="btn-cv magnetic" rel="noopener" data-label="Curriculum Vitae" {...magnetic}>Download CV</a>
         </div>
       </div>
 
